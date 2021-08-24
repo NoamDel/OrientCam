@@ -1,0 +1,2 @@
+rootProject.name = 'OrientCam'
+include ':app', ':lib_task_api', ':models'

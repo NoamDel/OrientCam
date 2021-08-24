@@ -1,2 +1,2 @@
-org/tensorflow/lite/examples/classification/models/test/BuildConfig.java
- org.tensorflow.lite.examples.classification.models.test.BuildConfig
+org/activity/models/test/BuildConfig.java
+ org.activity.models.test.BuildConfig

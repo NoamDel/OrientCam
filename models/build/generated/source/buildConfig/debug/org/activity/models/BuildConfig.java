@@ -1,6 +1,3 @@
-/**
- * Automatically generated file. DO NOT MODIFY
- */
 package org.activity.models;
 
 public final class BuildConfig {

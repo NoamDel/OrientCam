@@ -1,4 +1,4 @@
-org.tensorflow.lite.examples.classification.tflite.test
+org.activity.classifier.test
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom

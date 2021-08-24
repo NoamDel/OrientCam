@@ -1,6 +1,4 @@
-/**
- * Automatically generated file. DO NOT MODIFY
- */
+
 package org.activity.classifier.test;
 
 public final class BuildConfig {

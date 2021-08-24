@@ -10,6 +10,7 @@ import android.util.TypedValue;
 import android.widget.Toast;
 import java.io.IOException;
 import java.util.List;
+
 import org.activity.env.BorderedText;
 import org.activity.classifier.Classifier;
 import org.activity.classifier.Classifier.Device;
@@ -19,7 +20,6 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
   private static final float TEXT_SIZE_DIP = 10;
   private Bitmap rgbFrameBitmap = null;
-  private long lastProcessingTimeMs;
   private Integer sensorOrientation;
   private Classifier classifier;
   private BorderedText borderedText;
@@ -73,30 +73,27 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
               final long startTime = SystemClock.uptimeMillis();
               final List<Classifier.Recognition> results =
                   classifier.recognizeImage(rgbFrameBitmap, sensorOrientation);
-              lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
 
               runOnUiThread(
                   new Runnable() {
                     @Override
                     public void run() {
                       showResultsInBottomSheet(results);
-//                      showFrameInfo(previewWidth + "x" + previewHeight);
-//                      showCropInfo(imageSizeX + "x" + imageSizeY);
-//                      showCameraResolution(cropSize + "x" + cropSize);
-//                      showRotationInfo(String.valueOf(sensorOrientation));
-//                      showInference(lastProcessingTimeMs + "ms");
                       foundObject[0] = isObjectInImage(results);
+                      if(foundObject[0])
+                      {
+                        announceObject();
+                        objToLookFor = "announceOnce";  // Ugly patch in order to stop repeating the announcement of the same object when the camera still pointing on it.
+
+                      }
+                      userGuidance();
+                      readyForNextImage();
+                        //onDestroy();
                     }
                   });
+
             }
-           if(!foundObject[0])
-           {
-             readyForNextImage();
-           }
-           else {
-            announceObject();
-            //onDestroy();
-           }
+
           }
         });
   }

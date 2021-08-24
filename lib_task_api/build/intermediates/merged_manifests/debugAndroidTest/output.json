@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "org.tensorflow.lite.examples.classification.tflite.test",
+  "applicationId": "org.activity.classifier.test",
   "variantType": "ANDROID_TEST",
   "elements": [
     {

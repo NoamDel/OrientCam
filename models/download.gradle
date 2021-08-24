@@ -1,6 +1,7 @@
 def modelEfficientNetQuantDownloadUrl = "https://tfhub.dev/tensorflow/lite-model/efficientnet/lite0/int8/2?lite-format=tflite"
 def modelEfficientNetQuantFile = "efficientnet-lite0-int8.tflite"
 
+
 task downloadEfficientNetQuant(type: Download) {
     src "${modelEfficientNetQuantDownloadUrl}"
     dest project.ext.ASSET_DIR + "/${modelEfficientNetQuantFile}"

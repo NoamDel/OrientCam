@@ -1,1 +1,1 @@
-org.tensorflow.lite.examples.classification.models.test
+org.activity.models.test

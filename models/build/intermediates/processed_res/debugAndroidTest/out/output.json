@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "org.tensorflow.lite.examples.classification.models.test",
+  "applicationId": "org.activity.models.test",
   "variantType": "ANDROID_TEST",
   "elements": [
     {
